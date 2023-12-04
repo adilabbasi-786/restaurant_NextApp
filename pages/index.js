@@ -4,6 +4,10 @@ import HeroSection from "../components/HeroSection";
 import About from "../components/About";
 import Category from "../components/Category";
 import Products from "../components/Products";
+import Team from "../components/Team";
+import Clients from "../components/Clients";
+import Contact from "../components/Contact";
+import Footer from "../components/Footer";
 
 const index = () => {
   return (
@@ -23,6 +27,10 @@ const index = () => {
       <About />
       <Category />
       <Products />
+      <Team />
+      <Clients />
+      <Contact />
+      <Footer />
     </>
   );
 };

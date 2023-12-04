@@ -883,7 +883,7 @@ ol {
 .testimonial__item .rating span {
   font-size: 14px;
   color: #f0c656;
-  margin-right: -5px;
+  margin-right: -1px;
   display: inline-block;
 }
 .testimonial__item p {
