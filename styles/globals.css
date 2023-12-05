@@ -4337,6 +4337,7 @@ select {
   text-transform: none;
 }
 select {
+  border: none;
   word-wrap: normal;
 }
 [type="button"],

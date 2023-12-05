@@ -5,9 +5,63 @@ import searchIcon from "../images/icon/search.png";
 import cartIcon from "../images/icon/cart.png";
 import heartIcon from "../images/icon/heart.png";
 import Image from "next/image";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 const Header = () => {
+  const router = useRouter();
+  console.log(router.asPath);
+  const currentroute = router.asPath;
+
   return (
     <header className="header">
+      <div class="offcanvas-menu-overlay"></div>
+      <div class="offcanvas-menu-wrapper">
+        <div class="offcanvas__cart">
+          <div class="offcanvas__cart__links">
+            <a href="#" class="search-switch">
+              <img src="img/icon/search.png" alt="" />
+            </a>
+            <a href="#">
+              <img src="img/icon/heart.png" alt="" />
+            </a>
+          </div>
+          <div class="offcanvas__cart__item">
+            <a href="#">
+              <img src="img/icon/cart.png" alt="" /> <span>0</span>
+            </a>
+            <div class="cart__price">
+              Cart: <span>$0.00</span>
+            </div>
+          </div>
+        </div>
+        <div class="offcanvas__logo">
+          <a href="./index.html">
+            <img src="img/logo.png" alt="" />
+          </a>
+        </div>
+        <div id="mobile-menu-wrap"></div>
+        <div class="offcanvas__option">
+          <ul>
+            <li>
+              USD <span class="arrow_carrot-down"></span>
+              <ul>
+                <li>EUR</li>
+                <li>USD</li>
+              </ul>
+            </li>
+            <li>
+              ENG <span class="arrow_carrot-down"></span>
+              <ul>
+                <li>Spanish</li>
+                <li>ENG</li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">Sign in</a> <span class="arrow_carrot-down"></span>
+            </li>
+          </ul>
+        </div>
+      </div>
       <div className="header__top">
         <div className="container">
           <div className="row">
@@ -98,14 +152,14 @@ const Header = () => {
           <div className="col-lg-12">
             <nav className="header__menu mobile-menu">
               <ul>
-                <li className="active">
+                <li className={currentroute === "/" ? "active" : ""}>
                   <a href="/">Home</a>
                 </li>
-                <li>
-                  <a href="">About</a>
+                <li className={currentroute === "/About" ? "active" : ""}>
+                  <a href="#">About</a>
                 </li>
-                <li>
-                  <a href="">Shop</a>
+                <li className={currentroute === "/shop" ? "active" : ""}>
+                  <a href="/shop">Shop</a>
                 </li>
                 <li>
                   <a href="#">Pages</a>
@@ -114,7 +168,7 @@ const Header = () => {
                       <a href="./shop-details.html">Shop Details</a>
                     </li>
                     <li>
-                      <a href="./shoping-cart.html">Shoping Cart</a>
+                      <a href="/shoppingCart">Shoping Cart</a>
                     </li>
                     <li>
                       <a href="./checkout.html">Check Out</a>
@@ -133,8 +187,8 @@ const Header = () => {
                 <li>
                   <a href="./blog.html">Blog</a>
                 </li>
-                <li>
-                  <a href="./contact.html">Contact</a>
+                <li className={currentroute === "/contact" ? "active" : ""}>
+                  <a href="/contact">Contact</a>
                 </li>
               </ul>
             </nav>

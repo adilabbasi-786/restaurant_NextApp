@@ -6,14 +6,14 @@ import { BsFillSendFill } from "react-icons/bs";
 const Footer = () => {
   return (
     <footer
-      class="footer set-bg"
+      className="footer set-bg"
       //   data-setbg="img/footer-bg.jpg"
       style={{ backgroundImage: `url(${footerImg.src})` }}
     >
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4 col-md-6 col-sm-6">
-            <div class="footer__widget">
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-4 col-md-6 col-sm-6">
+            <div className="footer__widget">
               <h6>WORKING HOURS</h6>
               <ul>
                 <li>Monday - Friday: 08:00 am – 08:30 pm</li>
@@ -22,9 +22,9 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 col-sm-6">
-            <div class="footer__about">
-              <div class="footer__logo">
+          <div className="col-lg-4 col-md-6 col-sm-6">
+            <div className="footer__about">
+              <div className="footer__logo">
                 <a href="#">
                   <Image src={footerLogo} />
                 </a>
@@ -33,7 +33,7 @@ const Footer = () => {
                 Lorem ipsum dolor amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore dolore magna aliqua.
               </p>
-              <div class="footer__social">
+              <div className="footer__social">
                 <a href="#">
                   <FaFacebookF />
                 </a>
@@ -49,8 +49,8 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 col-sm-6">
-            <div class="footer__newslatter">
+          <div className="col-lg-4 col-md-6 col-sm-6">
+            <div className="footer__newslatter">
               <h6>Subscribe</h6>
               <p>Get latest updates and offers.</p>
               <form action="#">
@@ -63,22 +63,22 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div class="copyright">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-7">
-              <p class="copyright__text text-white">
+      <div className="copyright">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-7">
+              <p className="copyright__text text-white">
                 Copyright ©
                 <script>document.write(new Date().getFullYear());</script>2023
                 All rights reserved | This template is made with{" "}
-                <i class="fa fa-heart" aria-hidden="true"></i> by{" "}
+                <i className="fa fa-heart" aria-hidden="true"></i> by{" "}
                 <a href="https://colorlib.com" target="_blank">
                   FTS
                 </a>
               </p>
             </div>
-            <div class="col-lg-5">
-              <div class="copyright__widget">
+            <div className="col-lg-5">
+              <div className="copyright__widget">
                 <ul>
                   <li>
                     <a href="#">Privacy Policy</a>
