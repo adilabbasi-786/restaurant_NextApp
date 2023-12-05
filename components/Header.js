@@ -155,9 +155,9 @@ const Header = () => {
                 <li className={currentroute === "/" ? "active" : ""}>
                   <a href="/">Home</a>
                 </li>
-                <li className={currentroute === "/About" ? "active" : ""}>
-                  <a href="#">About</a>
-                </li>
+                {/* <li className={currentroute === "/about" ? "active" : ""}>
+                  <a href="/about">About</a>
+                </li> */}
                 <li className={currentroute === "/shop" ? "active" : ""}>
                   <a href="/shop">Shop</a>
                 </li>
@@ -165,28 +165,14 @@ const Header = () => {
                   <a href="#">Pages</a>
                   <ul className="dropdown">
                     <li>
-                      <a href="./shop-details.html">Shop Details</a>
-                    </li>
-                    <li>
                       <a href="/shoppingCart">Shoping Cart</a>
                     </li>
                     <li>
                       <a href="/checkout">Check Out</a>
                     </li>
-                    <li>
-                      <a href="./wisslist.html">Wisslist</a>
-                    </li>
-                    <li>
-                      <a href="./className.html">className</a>
-                    </li>
-                    <li>
-                      <a href="./blog-details.html">Blog Details</a>
-                    </li>
                   </ul>
                 </li>
-                <li>
-                  <a href="./blog.html">Blog</a>
-                </li>
+
                 <li className={currentroute === "/contact" ? "active" : ""}>
                   <a href="/contact">Contact</a>
                 </li>
