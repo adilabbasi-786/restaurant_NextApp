@@ -7,6 +7,7 @@ import heartIcon from "../images/icon/heart.png";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
+import Link from "next/link";
 const Header = () => {
   const router = useRouter();
   console.log(router.asPath);
@@ -14,50 +15,51 @@ const Header = () => {
 
   return (
     <header className="header">
-      <div class="offcanvas-menu-overlay"></div>
-      <div class="offcanvas-menu-wrapper">
-        <div class="offcanvas__cart">
-          <div class="offcanvas__cart__links">
-            <a href="#" class="search-switch">
+      <div className="offcanvas-menu-overlay"></div>
+      <div className="offcanvas-menu-wrapper">
+        <div className="offcanvas__cart">
+          <div className="offcanvas__cart__links">
+            <a href="#" className="search-switch">
               <img src="img/icon/search.png" alt="" />
             </a>
             <a href="#">
               <img src="img/icon/heart.png" alt="" />
             </a>
           </div>
-          <div class="offcanvas__cart__item">
+          <div className="offcanvas__cart__item">
             <a href="#">
               <img src="img/icon/cart.png" alt="" /> <span>0</span>
             </a>
-            <div class="cart__price">
+            <div className="cart__price">
               Cart: <span>$0.00</span>
             </div>
           </div>
         </div>
-        <div class="offcanvas__logo">
+        <div className="offcanvas__logo">
           <a href="./index.html">
             <img src="img/logo.png" alt="" />
           </a>
         </div>
         <div id="mobile-menu-wrap"></div>
-        <div class="offcanvas__option">
+        <div className="offcanvas__option">
           <ul>
             <li>
-              USD <span class="arrow_carrot-down"></span>
+              USD <span className="arrow_carrot-down"></span>
               <ul>
                 <li>EUR</li>
                 <li>USD</li>
               </ul>
             </li>
             <li>
-              ENG <span class="arrow_carrot-down"></span>
+              ENG <span className="arrow_carrot-down"></span>
               <ul>
                 <li>Spanish</li>
                 <li>ENG</li>
               </ul>
             </li>
             <li>
-              <a href="#">Sign in</a> <span class="arrow_carrot-down"></span>
+              <a href="#">Sign in</a>{" "}
+              <span className="arrow_carrot-down"></span>
             </li>
           </ul>
         </div>
@@ -96,14 +98,14 @@ const Header = () => {
                   </ul>
                 </div>
                 <div className="header__logo">
-                  <a href="/">
+                  <Link href="/">
                     <Image
                       src={logo}
                       width={120}
                       height={52}
                       alt="Picture of the author"
                     />
-                  </a>
+                  </Link>
                 </div>
                 <div className="header__top__right">
                   <div className="header__top__right__links">
@@ -153,28 +155,28 @@ const Header = () => {
             <nav className="header__menu mobile-menu">
               <ul>
                 <li className={currentroute === "/" ? "active" : ""}>
-                  <a href="/">Home</a>
+                  <Link href="/">Home</Link>
                 </li>
                 {/* <li className={currentroute === "/about" ? "active" : ""}>
                   <a href="/about">About</a>
                 </li> */}
                 <li className={currentroute === "/shop" ? "active" : ""}>
-                  <a href="/shop">Shop</a>
+                  <Link href="/shop">Shop</Link>
                 </li>
                 <li>
-                  <a href="#">Pages</a>
+                  <Link href="#">Pages</Link>
                   <ul className="dropdown">
                     <li>
-                      <a href="/shoppingCart">Shoping Cart</a>
+                      <Link href="/shoppingCart">Shoping Cart</Link>
                     </li>
                     <li>
-                      <a href="/checkout">Check Out</a>
+                      <Link href="/checkout">Check Out</Link>
                     </li>
                   </ul>
                 </li>
 
                 <li className={currentroute === "/contact" ? "active" : ""}>
-                  <a href="/contact">Contact</a>
+                  <Link href="/contact">Contact</Link>
                 </li>
               </ul>
             </nav>

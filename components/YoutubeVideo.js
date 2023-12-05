@@ -5,7 +5,7 @@ const YoutubeVideo = () => {
 
   return (
     <div className="about__video set-bg" data-setbg="img/about-video.jpg">
-      <Image src={videoImg} />
+      <Image alt="" src={videoImg} />
 
       <iframe
         width="560"

@@ -26,7 +26,7 @@ const Team = () => {
         <div className="row">
           <div className="col-lg-3 col-md-6 col-sm-6">
             <div className="team__item set-bg" data-setbg="img/team/team-1.jpg">
-              <Image src={team1} />
+              <Image alt="" src={team1} />
               <div className="team__item__text">
                 <h6>Randy Butler</h6>
                 <span>Decorater</span>
@@ -49,7 +49,7 @@ const Team = () => {
           </div>
           <div className="col-lg-3 col-md-6 col-sm-6">
             <div className="team__item set-bg" data-setbg="img/team/team-2.jpg">
-              <Image src={team2} />
+              <Image alt="" src={team2} />
               <div className="team__item__text">
                 <h6>Randy Butler</h6>
                 <span>Decorater</span>
@@ -72,7 +72,7 @@ const Team = () => {
           </div>
           <div className="col-lg-3 col-md-6 col-sm-6">
             <div className="team__item set-bg" data-setbg="img/team/team-3.jpg">
-              <Image src={team3} />
+              <Image alt="" src={team3} />
               <div className="team__item__text">
                 <h6>Randy Butler</h6>
                 <span>Decorater</span>
@@ -95,7 +95,7 @@ const Team = () => {
           </div>
           <div className="col-lg-3 col-md-6 col-sm-6">
             <div className="team__item set-bg" data-setbg="img/team/team-4.jpg">
-              <Image src={team4} />
+              <Image alt="" src={team4} />
               <div className="team__item__text">
                 <h6>Randy Butler</h6>
                 <span>Decorater</span>

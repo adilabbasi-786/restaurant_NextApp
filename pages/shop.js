@@ -82,7 +82,7 @@ const shop = () => {
                   className="product__item__pic set-bg"
                   data-setbg="img/shop/product-1.jpg"
                 >
-                  <Image src={pro1} />
+                  <Image alt="" src={pro1} />
                   <div className="product__label">
                     <span>Cupcake</span>
                   </div>
@@ -104,7 +104,7 @@ const shop = () => {
                   className="product__item__pic set-bg"
                   data-setbg="img/shop/product-2.jpg"
                 >
-                  <Image src={pro2} />
+                  <Image alt="" src={pro2} />
 
                   <div className="product__label">
                     <span>Cupcake</span>
@@ -127,7 +127,7 @@ const shop = () => {
                   className="product__item__pic set-bg"
                   data-setbg="img/shop/product-3.jpg"
                 >
-                  <Image src={pro3} />
+                  <Image alt="" src={pro3} />
 
                   <div className="product__label">
                     <span>Cupcake</span>
@@ -150,7 +150,7 @@ const shop = () => {
                   className="product__item__pic set-bg"
                   data-setbg="img/shop/product-4.jpg"
                 >
-                  <Image src={pro4} />
+                  <Image alt="" src={pro4} />
 
                   <div className="product__label">
                     <span>Cupcake</span>
@@ -173,7 +173,7 @@ const shop = () => {
                   className="product__item__pic set-bg"
                   data-setbg="img/shop/product-5.jpg"
                 >
-                  <Image src={pro5} />
+                  <Image alt="" src={pro5} />
 
                   <div className="product__label">
                     <span>Cupcake</span>
@@ -196,7 +196,7 @@ const shop = () => {
                   className="product__item__pic set-bg"
                   data-setbg="img/shop/product-6.jpg"
                 >
-                  <Image src={pro6} />
+                  <Image alt="" src={pro6} />
 
                   <div className="product__label">
                     <span>Cupcake</span>
@@ -219,7 +219,7 @@ const shop = () => {
                   className="product__item__pic set-bg"
                   data-setbg="img/shop/product-7.jpg"
                 >
-                  <Image src={pro7} />
+                  <Image alt="" src={pro7} />
 
                   <div className="product__label">
                     <span>Cupcake</span>
@@ -242,7 +242,7 @@ const shop = () => {
                   className="product__item__pic set-bg"
                   data-setbg="img/shop/product-8.jpg"
                 >
-                  <Image src={pro8} />
+                  <Image alt="" src={pro8} />
 
                   <div className="product__label">
                     <span>Cupcake</span>
@@ -265,7 +265,7 @@ const shop = () => {
                   className="product__item__pic set-bg"
                   data-setbg="img/shop/product-9.jpg"
                 >
-                  <Image src={pro9} />
+                  <Image alt="" src={pro9} />
 
                   <div className="product__label">
                     <span>Cupcake</span>
@@ -288,7 +288,7 @@ const shop = () => {
                   className="product__item__pic set-bg"
                   data-setbg="img/shop/product-10.jpg"
                 >
-                  <Image src={pro10} />
+                  <Image alt="" src={pro10} />
 
                   <div className="product__label">
                     <span>Cupcake</span>
@@ -311,7 +311,7 @@ const shop = () => {
                   className="product__item__pic set-bg"
                   data-setbg="img/shop/product-11.jpg"
                 >
-                  <Image src={pro11} />
+                  <Image alt="" src={pro11} />
 
                   <div className="product__label">
                     <span>Cupcake</span>
@@ -334,7 +334,7 @@ const shop = () => {
                   className="product__item__pic set-bg"
                   data-setbg="img/shop/product-12.jpg"
                 >
-                  <Image src={pro12} />
+                  <Image alt="" src={pro12} />
 
                   <div className="product__label">
                     <span>Cupcake</span>

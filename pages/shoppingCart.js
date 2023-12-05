@@ -9,16 +9,16 @@ const shoppingCart = () => {
   return (
     <>
       <Header />
-      <div class="breadcrumb-option">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-6">
-              <div class="breadcrumb__text">
+      <div className="breadcrumb-option">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-6 col-md-6 col-sm-6">
+              <div className="breadcrumb__text">
                 <h2>Shopping cart</h2>
               </div>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-6">
-              <div class="breadcrumb__links">
+            <div className="col-lg-6 col-md-6 col-sm-6">
+              <div className="breadcrumb__links">
                 <a href="./index.html">Home</a>
                 <span>Shopping cart</span>
               </div>
@@ -26,11 +26,11 @@ const shoppingCart = () => {
           </div>
         </div>
       </div>
-      <section class="shopping-cart spad">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-8">
-              <div class="shopping__cart__table">
+      <section className="shopping-cart spad">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-8">
+              <div className="shopping__cart__table">
                 <table>
                   <thead>
                     <tr>
@@ -42,128 +42,128 @@ const shoppingCart = () => {
                   </thead>
                   <tbody>
                     <tr>
-                      <td class="product__cart__item">
-                        <div class="product__cart__item__pic">
-                          <Image src={cartImg1} />
+                      <td className="product__cart__item">
+                        <div className="product__cart__item__pic">
+                          <Image alt="" src={cartImg1} />
                         </div>
-                        <div class="product__cart__item__text">
+                        <div className="product__cart__item__text">
                           <h6>T-shirt Contrast Pocket</h6>
                           <h5>$98.49</h5>
                         </div>
                       </td>
-                      <td class="quantity__item">
-                        <div class="quantity">
-                          <div class="pro-qty">
-                            <span class="dec qtybtn">-</span>
+                      <td className="quantity__item">
+                        <div className="quantity">
+                          <div className="pro-qty">
+                            <span className="dec qtybtn">-</span>
                             <input type="text" value="1" />
-                            <span class="inc qtybtn">+</span>
+                            <span className="inc qtybtn">+</span>
                           </div>
                         </div>
                       </td>
-                      <td class="cart__price">$ 30.00</td>
-                      <td class="cart__close">
-                        <span class="icon_close"></span>
+                      <td className="cart__price">$ 30.00</td>
+                      <td className="cart__close">
+                        <span className="icon_close"></span>
                       </td>
                     </tr>
                     <tr>
-                      <td class="product__cart__item">
-                        <div class="product__cart__item__pic">
-                          <Image src={cartImg2} />
+                      <td className="product__cart__item">
+                        <div className="product__cart__item__pic">
+                          <Image alt="" src={cartImg2} />
                         </div>
-                        <div class="product__cart__item__text">
+                        <div className="product__cart__item__text">
                           <h6>Diagonal Textured Cap</h6>
                           <h5>$98.49</h5>
                         </div>
                       </td>
-                      <td class="quantity__item">
-                        <div class="quantity">
-                          <div class="pro-qty">
-                            <span class="dec qtybtn">-</span>
+                      <td className="quantity__item">
+                        <div className="quantity">
+                          <div className="pro-qty">
+                            <span className="dec qtybtn">-</span>
                             <input type="text" value="1" />
-                            <span class="inc qtybtn">+</span>
+                            <span className="inc qtybtn">+</span>
                           </div>
                         </div>
                       </td>
-                      <td class="cart__price">$ 32.50</td>
-                      <td class="cart__close">
-                        <span class="icon_close"></span>
+                      <td className="cart__price">$ 32.50</td>
+                      <td className="cart__close">
+                        <span className="icon_close"></span>
                       </td>
                     </tr>
                     <tr>
-                      <td class="product__cart__item">
-                        <div class="product__cart__item__pic">
-                          <Image src={cartImg3} />
+                      <td className="product__cart__item">
+                        <div className="product__cart__item__pic">
+                          <Image alt="" src={cartImg3} />
                         </div>
-                        <div class="product__cart__item__text">
+                        <div className="product__cart__item__text">
                           <h6>Basic Flowing Scarf</h6>
                           <h5>$98.49</h5>
                         </div>
                       </td>
-                      <td class="quantity__item">
-                        <div class="quantity">
-                          <div class="pro-qty">
-                            <span class="dec qtybtn">-</span>
+                      <td className="quantity__item">
+                        <div className="quantity">
+                          <div className="pro-qty">
+                            <span className="dec qtybtn">-</span>
                             <input type="text" value="1" />
-                            <span class="inc qtybtn">+</span>
+                            <span className="inc qtybtn">+</span>
                           </div>
                         </div>
                       </td>
-                      <td class="cart__price">$ 47.00</td>
-                      <td class="cart__close">
-                        <span class="icon_close"></span>
+                      <td className="cart__price">$ 47.00</td>
+                      <td className="cart__close">
+                        <span className="icon_close"></span>
                       </td>
                     </tr>
                     <tr>
-                      <td class="product__cart__item">
-                        <div class="product__cart__item__pic">
-                          <Image src={cartImg4} />
+                      <td className="product__cart__item">
+                        <div className="product__cart__item__pic">
+                          <Image alt="" src={cartImg4} />
                         </div>
-                        <div class="product__cart__item__text">
+                        <div className="product__cart__item__text">
                           <h6>Basic Flowing Scarf</h6>
                           <h5>$98.49</h5>
                         </div>
                       </td>
-                      <td class="quantity__item">
-                        <div class="quantity">
-                          <div class="pro-qty">
-                            <span class="dec qtybtn">-</span>
+                      <td className="quantity__item">
+                        <div className="quantity">
+                          <div className="pro-qty">
+                            <span className="dec qtybtn">-</span>
                             <input type="text" value="1" />
-                            <span class="inc qtybtn">+</span>
+                            <span className="inc qtybtn">+</span>
                           </div>
                         </div>
                       </td>
-                      <td class="cart__price">$ 30.00</td>
-                      <td class="cart__close">
-                        <span class="icon_close"></span>
+                      <td className="cart__price">$ 30.00</td>
+                      <td className="cart__close">
+                        <span className="icon_close"></span>
                       </td>
                     </tr>
                   </tbody>
                 </table>
               </div>
-              <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-6">
-                  <div class="continue__btn">
+              <div className="row">
+                <div className="col-lg-6 col-md-6 col-sm-6">
+                  <div className="continue__btn">
                     <a href="#">Continue Shopping</a>
                   </div>
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-6">
-                  <div class="continue__btn update__btn">
+                <div className="col-lg-6 col-md-6 col-sm-6">
+                  <div className="continue__btn update__btn">
                     <a href="#">
-                      <i class="fa fa-spinner"></i> Update cart
+                      <i className="fa fa-spinner"></i> Update cart
                     </a>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-lg-4">
-              <div class="cart__discount">
+            <div className="col-lg-4">
+              <div className="cart__discount">
                 <h6>Discount codes</h6>
                 <form action="#">
                   <input type="text" placeholder="Coupon code" />
                   <button type="submit">Apply</button>
                 </form>
               </div>
-              <div class="cart__total">
+              <div className="cart__total">
                 <h6>Cart total</h6>
                 <ul>
                   <li>
@@ -173,7 +173,7 @@ const shoppingCart = () => {
                     Total <span>$ 169.50</span>
                   </li>
                 </ul>
-                <a href="#" class="primary-btn">
+                <a href="#" className="primary-btn">
                   Proceed to checkout
                 </a>
               </div>

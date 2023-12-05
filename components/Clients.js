@@ -48,7 +48,7 @@ const Clients = () => {
                     <div className="testimonial__item">
                       <div className="testimonial__author">
                         <div className="testimonial__author__pic">
-                          <Image src={ta1} />
+                          <Image alt="" src={ta1} />
                         </div>
                         <div className="testimonial__author__text">
                           <h5>Kerry D.Silva</h5>
@@ -75,7 +75,7 @@ const Clients = () => {
                     <div className="testimonial__item">
                       <div className="testimonial__author">
                         <div className="testimonial__author__pic">
-                          <Image src={ta1} />
+                          <Image alt="" src={ta1} />
                         </div>
                         <div className="testimonial__author__text">
                           <h5>Ophelia Nunez</h5>
@@ -102,7 +102,7 @@ const Clients = () => {
                     <div className="testimonial__item">
                       <div className="testimonial__author">
                         <div className="testimonial__author__pic">
-                          <Image src={ta1} />
+                          <Image alt="" src={ta1} />
                         </div>
                         <div className="testimonial__author__text">
                           <h5>Kerry D.Silva</h5>
@@ -129,7 +129,7 @@ const Clients = () => {
                     <div className="testimonial__item">
                       <div className="testimonial__author">
                         <div className="testimonial__author__pic">
-                          <Image src={ta1} />
+                          <Image alt="" src={ta1} />
                         </div>
                         <div className="testimonial__author__text">
                           <h5>Kerry D.Silva</h5>
@@ -156,7 +156,7 @@ const Clients = () => {
                     <div className="testimonial__item">
                       <div className="testimonial__author">
                         <div className="testimonial__author__pic">
-                          <Image src={ta1} />
+                          <Image alt="" src={ta1} />
                         </div>
                         <div className="testimonial__author__text">
                           <h5>Kerry D.Silva</h5>
@@ -183,7 +183,7 @@ const Clients = () => {
                     <div className="testimonial__item">
                       <div className="testimonial__author">
                         <div className="testimonial__author__pic">
-                          <Image src={ta1} />
+                          <Image alt="" src={ta1} />
                         </div>
                         <div className="testimonial__author__text">
                           <h5>Ophelia Nunez</h5>
@@ -210,7 +210,7 @@ const Clients = () => {
                     <div className="testimonial__item">
                       <div className="testimonial__author">
                         <div className="testimonial__author__pic">
-                          <Image src={ta1} />
+                          <Image alt="" src={ta1} />
                         </div>
                         <div className="testimonial__author__text">
                           <h5>Kerry D.Silva</h5>
@@ -237,7 +237,7 @@ const Clients = () => {
                     <div className="testimonial__item">
                       <div className="testimonial__author">
                         <div className="testimonial__author__pic">
-                          <Image src={ta1} />
+                          <Image alt="" src={ta1} />
                         </div>
                         <div className="testimonial__author__text">
                           <h5>Ophelia Nunez</h5>
@@ -264,7 +264,7 @@ const Clients = () => {
                     <div className="testimonial__item">
                       <div className="testimonial__author">
                         <div className="testimonial__author__pic">
-                          <Image src={ta1} />
+                          <Image alt="" src={ta1} />
                         </div>
                         <div className="testimonial__author__text">
                           <h5>Kerry D.Silva</h5>
@@ -294,7 +294,7 @@ const Clients = () => {
                     <div className="testimonial__item">
                       <div className="testimonial__author">
                         <div className="testimonial__author__pic">
-                          <Image src={ta1} />
+                          <Image alt="" src={ta1} />
                         </div>
                         <div className="testimonial__author__text">
                           <h5>Kerry D.Silva</h5>
@@ -321,7 +321,7 @@ const Clients = () => {
                     <div className="testimonial__item">
                       <div className="testimonial__author">
                         <div className="testimonial__author__pic">
-                          <Image src={ta1} />
+                          <Image alt="" src={ta1} />
                         </div>
                         <div className="testimonial__author__text">
                           <h5>Kerry D.Silva</h5>
@@ -348,7 +348,7 @@ const Clients = () => {
                     <div className="testimonial__item">
                       <div className="testimonial__author">
                         <div className="testimonial__author__pic">
-                          <Image src={ta1} />
+                          <Image alt="" src={ta1} />
                         </div>
                         <div className="testimonial__author__text">
                           <h5>Ophelia Nunez</h5>
