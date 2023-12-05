@@ -171,7 +171,7 @@ const Header = () => {
                       <a href="/shoppingCart">Shoping Cart</a>
                     </li>
                     <li>
-                      <a href="./checkout.html">Check Out</a>
+                      <a href="/checkout">Check Out</a>
                     </li>
                     <li>
                       <a href="./wisslist.html">Wisslist</a>
