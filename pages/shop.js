@@ -7,7 +7,7 @@ import { useContext } from "react";
 import { Context } from "../Context/CartContext";
 import { useState } from "react";
 import { menu } from "../menu";
-const shop = ({ updateCartIcon }) => {
+const Shop = ({ updateCartIcon }) => {
   const { handleAddToCart } = useContext(Context);
   const [quantity, setQuantity] = useState(1);
 
@@ -141,4 +141,4 @@ const shop = ({ updateCartIcon }) => {
   );
 };
 
-export default shop;
+export default Shop;
