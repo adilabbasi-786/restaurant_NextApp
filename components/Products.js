@@ -31,7 +31,7 @@ const Products = () => {
                   </h6>
                   <div className="product__item__price">${item.price}</div>
                   {!item.isCartAdded && (
-                    <div className="cart_add">
+                    <div className="cart_add" style={{ cursor: "pointer" }}>
                       <a
                         onClick={() => {
                           handleAddToCart(item, quantity);
