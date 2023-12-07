@@ -86,11 +86,12 @@ const Header = ({ updateCartIcon }) => {
               className="slicknav_btn slicknav_collapsed"
               style={{ outline: "none" }}
             ></a>
+
             <nav
               className="slicknav_nav slicknav_hidden"
               aria-hidden="true"
               role="menu"
-              style={{ outline: "none" }}
+              style={{ outline: "none", display: "none" }}
             >
               <ul>
                 <li className="active">

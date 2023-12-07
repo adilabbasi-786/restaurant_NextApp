@@ -4747,7 +4747,7 @@ pre code {
   position: relative;
   width: 100%;
   padding-right: 15px;
-  padding-left: 15px;
+  padding-left: 25px;
 }
 .col {
   -ms-flex-preferred-size: 0;
@@ -15569,9 +15569,8 @@ you can use the generic selector below, but it's slower:
   display: inline;
 }
 .slicknav_menu {
-  *zoom: 1;
-  font-size: 16px;
-  background: #4c4c4c;
+  zoom: 1;
+  font-size: 22px;
   padding: 5px;
 }
 .slicknav_nav,
@@ -15590,7 +15589,7 @@ you can use the generic selector below, but it's slower:
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
-  background-color: #222;
+  /* background-color: #222; */
 }
 .slicknav_nav {
   clear: both;
@@ -15615,7 +15614,7 @@ you can use the generic selector below, but it's slower:
 }
 .slicknav_nav a {
   text-decoration: none;
-  color: #fff;
+  /* color: #fff; */
 }
 .slicknav_nav a:hover {
   -webkit-border-radius: 6px;

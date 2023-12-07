@@ -103,6 +103,7 @@ const Shop = ({ updateCartIcon }) => {
                           }}
                           onClick={() => {
                             handleAddToCart(item, quantity);
+                            console.log(item);
                             item.isCartAdded = true;
                           }}
                         >
