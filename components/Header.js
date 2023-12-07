@@ -8,7 +8,12 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
-const Header = () => {
+import AppContext from "../Context/CartContext";
+import { Context } from "../Context/CartContext";
+import { useContext } from "react";
+const Header = ({ updateCartIcon }) => {
+  const Cart = useContext(AppContext);
+  const { cartCount, cartItems, cartSubTotal } = useContext(Context);
   const router = useRouter();
   console.log(router.asPath);
   const currentroute = router.asPath;
@@ -134,10 +139,10 @@ const Header = () => {
                         height={27}
                         alt="Picture of the author"
                       />
-                      <span>0</span>
+                      <span>{cartCount}</span>
                     </a>
                     <div className="cart__price">
-                      Cart: <span>$0.00</span>
+                      Cart: <span>${cartSubTotal}</span>
                     </div>
                   </div>
                 </div>
