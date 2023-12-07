@@ -77,23 +77,23 @@ const Header = ({ updateCartIcon }) => {
           </a>
         </div>
         <div id="mobile-menu-wrap">
-          <div class="slicknav_menu">
+          <div className="slicknav_menu">
             <a
               href="#"
               aria-haspopup="true"
               role="button"
               tabindex="0"
-              class="slicknav_btn slicknav_collapsed"
+              className="slicknav_btn slicknav_collapsed"
               style={{ outline: "none" }}
             ></a>
             <nav
-              class="slicknav_nav slicknav_hidden"
+              className="slicknav_nav slicknav_hidden"
               aria-hidden="true"
               role="menu"
               style={{ outline: "none" }}
             >
               <ul>
-                <li class="active">
+                <li className="active">
                   <Link href="/">Home</Link>
                 </li>
                 <li>
