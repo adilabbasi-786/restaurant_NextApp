@@ -82,7 +82,7 @@ const Header = ({ updateCartIcon }) => {
               href="#"
               aria-haspopup="true"
               role="button"
-              tabindex="0"
+              tabIndex="0"
               className="slicknav_btn slicknav_collapsed"
               style={{ outline: "none" }}
             ></a>
