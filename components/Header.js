@@ -4,6 +4,7 @@ import logo from "../images/logo.png";
 import searchIcon from "../images/icon/search.png";
 import cartIcon from "../images/icon/cart.png";
 import heartIcon from "../images/icon/heart.png";
+import { RxCross2 } from "react-icons/rx";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
@@ -11,41 +12,104 @@ import Link from "next/link";
 import AppContext from "../Context/CartContext";
 import { Context } from "../Context/CartContext";
 import { useContext } from "react";
+import { FaBars } from "react-icons/fa";
 const Header = ({ updateCartIcon }) => {
   const Cart = useContext(AppContext);
   const { cartCount, cartItems, cartSubTotal } = useContext(Context);
   const router = useRouter();
   console.log(router.asPath);
   const currentroute = router.asPath;
+  const [navbarOpen, setNavbarOpen] = useState(false);
+  const handleToggle = () => {
+    setNavbarOpen(!navbarOpen);
+  };
+  const [isPagesOpen, setPagesOpen] = useState(false);
 
+  const togglePagesDropdown = () => {
+    setPagesOpen(!isPagesOpen);
+  };
   return (
     <header className="header">
-      <div className="offcanvas-menu-overlay"></div>
-      <div className="offcanvas-menu-wrapper">
+      <div
+        className={`offcanvas-menu-overlay ${navbarOpen ? "active" : ""}`}
+      ></div>
+      <div className={`offcanvas-menu-wrapper ${navbarOpen ? "active" : ""}`}>
         <div className="offcanvas__cart">
+          <div className="canvas__open">
+            <RxCross2 onClick={handleToggle} />
+          </div>
           <div className="offcanvas__cart__links">
             <a href="#" className="search-switch">
-              <img src="img/icon/search.png" alt="" />
+              <Image
+                src={searchIcon}
+                width={24}
+                height={25}
+                alt="Picture of the author"
+              />
             </a>
             <a href="#">
-              <img src="img/icon/heart.png" alt="" />
+              <Image
+                src={heartIcon}
+                width={24}
+                height={25}
+                alt="Picture of the author"
+              />
             </a>
           </div>
           <div className="offcanvas__cart__item">
             <a href="#">
-              <img src="img/icon/cart.png" alt="" /> <span>0</span>
+              <Image
+                src={cartIcon}
+                width={24}
+                height={25}
+                alt="Picture of the author"
+              />{" "}
+              <span>{cartCount}</span>
             </a>
             <div className="cart__price">
-              Cart: <span>$0.00</span>
+              Cart: <span>${cartSubTotal}</span>
             </div>
           </div>
         </div>
         <div className="offcanvas__logo">
           <a href="./index.html">
-            <img src="img/logo.png" alt="" />
+            <Image src={logo} />
           </a>
         </div>
-        <div id="mobile-menu-wrap"></div>
+        <div id="mobile-menu-wrap">
+          <div class="slicknav_menu">
+            <a
+              href="#"
+              aria-haspopup="true"
+              role="button"
+              tabindex="0"
+              class="slicknav_btn slicknav_collapsed"
+              style={{ outline: "none" }}
+            ></a>
+            <nav
+              class="slicknav_nav slicknav_hidden"
+              aria-hidden="true"
+              role="menu"
+              style={{ outline: "none" }}
+            >
+              <ul>
+                <li class="active">
+                  <Link href="/">Home</Link>
+                </li>
+                <li>
+                  <Link href="/about">About</Link>
+                </li>
+                <li>
+                  <Link href="/shop">Shop</Link>
+                </li>
+
+                <li>
+                  <Link href="/contact">Contact</Link>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
         <div className="offcanvas__option">
           <ul>
             <li>
@@ -150,7 +214,7 @@ const Header = ({ updateCartIcon }) => {
             </div>
           </div>
           <div className="canvas__open">
-            <i className="fa fa-bars"></i>
+            <FaBars onClick={handleToggle} />
           </div>
         </div>
       </div>
@@ -162,9 +226,7 @@ const Header = ({ updateCartIcon }) => {
                 <li className={currentroute === "/" ? "active" : ""}>
                   <Link href="/">Home</Link>
                 </li>
-                {/* <li className={currentroute === "/about" ? "active" : ""}>
-                  <a href="/about">About</a>
-                </li> */}
+
                 <li className={currentroute === "/shop" ? "active" : ""}>
                   <Link href="/shop">Shop</Link>
                 </li>

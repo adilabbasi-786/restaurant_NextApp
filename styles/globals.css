@@ -3639,7 +3639,7 @@ ol {
     font-size: 15px;
     font-weight: 600;
     position: relative;
-    top: 4px;
+    top: -4px;
   }
   .offcanvas__cart__item .cart__price span {
     color: #111111;
