@@ -31,10 +31,11 @@ const AppContext = ({ children }) => {
     localStorage.setItem("cartItems", itemInString);
     setCartItems(items);
   };
-  const handleRemoveFromCart = (product) => {
+  const handleRemoveFromCart = (id) => {
+    const index = cartItems.findIndex((each) => each.id === id);
     let items = [...cartItems];
-    items = items?.filter((p) => p.id !== product.id);
-    localStorage.setItem("cart", JSON.stringify(items));
+    items = items?.filter((p) => p.id !== id);
+    localStorage.setItem("cartItems", JSON.stringify(items));
     setCartItems(items);
   };
   const handleCartProductQuantity = (type, product) => {

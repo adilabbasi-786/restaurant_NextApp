@@ -7,7 +7,8 @@ import { useContext } from "react";
 const shoppingCart = () => {
   const Cart = useContext(AppContext);
 
-  const { cartItems, handleAddToCart, cartSubTotal } = useContext(Context);
+  const { cartItems, handleAddToCart, cartSubTotal, handleRemoveFromCart } =
+    useContext(Context);
   const shippingPrice = 50.0;
   const total = cartSubTotal + shippingPrice;
   return (
@@ -95,7 +96,11 @@ const shoppingCart = () => {
                           $ {item.price * item.quantity}
                         </td>
                         <td className="cart__close">
-                          <span className="icon_close"></span>
+                          <span
+                            className="icon_close"
+                            style={{ cursor: "pointer" }}
+                            onClick={() => handleRemoveFromCart(item.id)}
+                          ></span>
                         </td>
                       </tr>
                       // <tr>
