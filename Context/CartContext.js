@@ -33,8 +33,12 @@ const AppContext = ({ children }) => {
     localStorage.setItem("cartItems", itemInString);
     setCartItems(items);
   };
+  // const increment=(id)=>{
+  //   const index=
+
+  // }
   const handleRemoveFromCart = (id) => {
-    const index = cartItems.findIndex((each) => each.id === id);
+    // const index = cartItems.findIndex((each) => each.id === id);
     let items = [...cartItems];
     items = items?.filter((p) => p.id !== id);
     localStorage.setItem("cartItems", JSON.stringify(items));

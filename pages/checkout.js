@@ -155,7 +155,7 @@ const Checkout = () => {
                     <ul className="checkout__total__products">
                       {cartItems.map((item) => (
                         <li key={item.id}>
-                          <samp>{item.quantity}.</samp> {item.title}{" "}
+                          <span>{item.quantity}.</span> {item.title}{" "}
                           <span>$ {item.price * item.quantity}</span>
                         </li>
                       ))}

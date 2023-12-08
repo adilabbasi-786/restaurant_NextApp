@@ -7,11 +7,9 @@ import { useContext } from "react";
 import { Context } from "../Context/CartContext";
 import { useState } from "react";
 import { menu } from "../menu";
-const Shop = ({ updateCartIcon }) => {
+const Shop = () => {
   const { handleAddToCart } = useContext(Context);
-  const [quantity, setQuantity] = useState(1);
 
-  const [data, setData] = useState([]);
   return (
     <>
       <Header />

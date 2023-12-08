@@ -7,7 +7,6 @@ import { useContext } from "react";
 
 const Products = () => {
   const { handleAddToCart } = useContext(Context);
-  const [quantity, setQuantity] = useState(1);
   const displayedItems = menu.slice(0, 8);
   return (
     <section className="product spad">
@@ -34,7 +33,12 @@ const Products = () => {
                     <div className="cart_add" style={{ cursor: "pointer" }}>
                       <a
                         onClick={() => {
-                          handleAddToCart(item, quantity);
+                          handleAddToCart(
+                            item.id,
+                            item.title,
+                            item.price,
+                            item.image
+                          );
                           console.log(item);
                           item.isCartAdded = true;
                         }}
