@@ -2,7 +2,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import AppContext, { Context } from "../Context/CartContext";
 import { useContext } from "react";
-const checkout = () => {
+const Checkout = () => {
   const Cart = useContext(AppContext);
   const { cartItems, cartSubTotal, total } = useContext(Context);
 
@@ -209,4 +209,4 @@ const checkout = () => {
   );
 };
 
-export default checkout;
+export default Checkout;

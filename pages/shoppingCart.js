@@ -6,7 +6,7 @@ import AppContext, { Context } from "../Context/CartContext";
 import { useContext } from "react";
 import Link from "next/link";
 
-const shoppingCart = () => {
+const ShoppingCart = () => {
   const Cart = useContext(AppContext);
 
   const { cartItems, cartSubTotal, handleRemoveFromCart } = useContext(Context);
@@ -167,4 +167,4 @@ const shoppingCart = () => {
   );
 };
 
-export default shoppingCart;
+export default ShoppingCart;
