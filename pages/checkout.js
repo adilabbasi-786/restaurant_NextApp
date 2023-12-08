@@ -1,6 +1,11 @@
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import AppContext, { Context } from "../Context/CartContext";
+import { useContext } from "react";
 const checkout = () => {
+  const Cart = useContext(AppContext);
+  const { cartItems, cartSubTotal, total } = useContext(Context);
+
   return (
     <>
       <Header />
@@ -148,27 +153,19 @@ const checkout = () => {
                       Product <span>Total</span>
                     </div>
                     <ul className="checkout__total__products">
-                      <li>
-                        <samp>01.</samp> Vanilla salted caramel{" "}
-                        <span>$ 300.0</span>
-                      </li>
-                      <li>
-                        <samp>02.</samp> German chocolate <span>$ 170.0</span>
-                      </li>
-                      <li>
-                        <samp>03.</samp> Sweet autumn <span>$ 170.0</span>
-                      </li>
-                      <li>
-                        <samp>04.</samp> Cluten free mini dozen{" "}
-                        <span>$ 110.0</span>
-                      </li>
+                      {cartItems.map((item) => (
+                        <li>
+                          <samp>{item.quantity}.</samp> {item.title}{" "}
+                          <span>$ {item.price * item.quantity}</span>
+                        </li>
+                      ))}
                     </ul>
                     <ul className="checkout__total__all">
                       <li>
-                        Subtotal <span>$750.99</span>
+                        Subtotal <span>${cartSubTotal}</span>
                       </li>
                       <li>
-                        Total <span>$750.99</span>
+                        Total <span>${total}</span>
                       </li>
                     </ul>
                     <div className="checkout__input__checkbox">

@@ -4,11 +4,12 @@ import Image from "next/image";
 import Footer from "../components/Footer";
 import AppContext, { Context } from "../Context/CartContext";
 import { useContext } from "react";
+import Link from "next/link";
+
 const shoppingCart = () => {
   const Cart = useContext(AppContext);
 
-  const { cartItems, handleAddToCart, cartSubTotal, handleRemoveFromCart } =
-    useContext(Context);
+  const { cartItems, cartSubTotal, handleRemoveFromCart } = useContext(Context);
   const shippingPrice = 50.0;
   const total = cartSubTotal + shippingPrice;
   return (
@@ -144,15 +145,18 @@ const shoppingCart = () => {
                 <h6>Cart total</h6>
                 <ul>
                   <li>
-                    Subtotal <span>$ 169.50</span>
+                    Subtotal <span>$ {cartSubTotal}</span>
                   </li>
                   <li>
-                    Total <span>$ 169.50</span>
+                    shipping <span>$ {shippingPrice}</span>
+                  </li>
+                  <li>
+                    Total <span>$ {total}</span>
                   </li>
                 </ul>
-                <a href="#" className="primary-btn">
-                  Proceed to checkout
-                </a>
+                <Link href="/checkout">
+                  <a className="primary-btn">Proceed to checkout</a>
+                </Link>
               </div>
             </div>
           </div>

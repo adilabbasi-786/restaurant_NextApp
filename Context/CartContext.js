@@ -13,11 +13,13 @@ const AppContext = ({ children }) => {
   const [cartItems, setCartItems] = useState(cart || []);
   const [cartCount, setCartCount] = useState(0);
   const [cartSubTotal, setCartSubTotal] = useState(0);
+  const [total, setTotal] = useState(0);
 
   useEffect(() => {
     let SubTotal = 0;
     cartItems.map((item) => (SubTotal += item?.quantity * item.price));
     setCartSubTotal(SubTotal);
+    setTotal(SubTotal + 50);
   }, [cartItems]);
 
   const handleAddToCart = (id, title, price, image) => {
@@ -38,9 +40,9 @@ const AppContext = ({ children }) => {
     localStorage.setItem("cartItems", JSON.stringify(items));
     setCartItems(items);
   };
-  const handleCartProductQuantity = (type, product) => {
+  const handleCartProductQuantity = (type, id) => {
     let items = [...cartItems];
-    let index = items?.findIndex((p) => p.id === product?.id);
+    let index = items?.findIndex((p) => p.id === id);
     if (type === "inc") {
       items[index].attributes.quantity += 1;
     } else if (type === "dec") {
@@ -59,6 +61,7 @@ const AppContext = ({ children }) => {
         handleAddToCart,
         handleRemoveFromCart,
         handleCartProductQuantity,
+        total,
       }}
     >
       {children}
