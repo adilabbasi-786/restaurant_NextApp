@@ -1,11 +1,15 @@
 import Header from "../components/Header";
 import Image from "next/image";
-import cartImg1 from "../images/cart/cart-1.jpg";
-import cartImg2 from "../images/cart/cart-2.jpg";
-import cartImg3 from "../images/cart/cart-3.jpg";
-import cartImg4 from "../images/cart/cart-4.jpg";
+
 import Footer from "../components/Footer";
+import AppContext, { Context } from "../Context/CartContext";
+import { useContext } from "react";
 const shoppingCart = () => {
+  const Cart = useContext(AppContext);
+
+  const { cartItems, handleAddToCart, cartSubTotal } = useContext(Context);
+  const shippingPrice = 50.0;
+  const total = cartSubTotal + shippingPrice;
   return (
     <>
       <Header />
@@ -41,102 +45,70 @@ const shoppingCart = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td className="product__cart__item">
-                        <div className="product__cart__item__pic">
-                          <Image alt="" src={cartImg1} />
-                        </div>
-                        <div className="product__cart__item__text">
-                          <h6>T-shirt Contrast Pocket</h6>
-                          <h5>$98.49</h5>
-                        </div>
-                      </td>
-                      <td className="quantity__item">
-                        <div className="quantity">
-                          <div className="pro-qty">
-                            <span className="dec qtybtn">-</span>
-                            <input type="text" value="1" />
-                            <span className="inc qtybtn">+</span>
+                    {cartItems.map((item) => (
+                      <tr>
+                        <td>
+                          <div
+                            style={{
+                              display: "flex",
+                              gap: "10px",
+                              alignItems: "center",
+                            }}
+                          >
+                            <div style={{ width: "25%", height: "25%" }}>
+                              <Image alt="" src={item.image} />
+                            </div>
+                            <div className="product__cart__item__text">
+                              <h6
+                                style={{
+                                  color: "#111111",
+                                  fontSize: "16px",
+                                  fontWeight: "500",
+                                  textTransform: "uppercase",
+                                  marginBottom: "10px",
+                                }}
+                              >
+                                {item.title}
+                              </h6>
+                              <h5
+                                style={{
+                                  color: "#111111",
+                                  fontWeight: "600",
+                                  fontSize: "16px",
+                                }}
+                              >
+                                ${item.price}
+                              </h5>
+                            </div>
                           </div>
-                        </div>
-                      </td>
-                      <td className="cart__price">$ 30.00</td>
-                      <td className="cart__close">
-                        <span className="icon_close"></span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="product__cart__item">
-                        <div className="product__cart__item__pic">
-                          <Image alt="" src={cartImg2} />
-                        </div>
-                        <div className="product__cart__item__text">
-                          <h6>Diagonal Textured Cap</h6>
-                          <h5>$98.49</h5>
-                        </div>
-                      </td>
-                      <td className="quantity__item">
-                        <div className="quantity">
-                          <div className="pro-qty">
-                            <span className="dec qtybtn">-</span>
-                            <input type="text" value="1" />
-                            <span className="inc qtybtn">+</span>
+                        </td>
+                        <td className="quantity__item">
+                          <div className="quantity">
+                            <div className="pro-qty">
+                              <span className="dec qtybtn">-</span>
+                              <input type="text" value="1" />
+                              <span className="inc qtybtn">+</span>
+                            </div>
                           </div>
-                        </div>
-                      </td>
-                      <td className="cart__price">$ 32.50</td>
-                      <td className="cart__close">
-                        <span className="icon_close"></span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="product__cart__item">
-                        <div className="product__cart__item__pic">
-                          <Image alt="" src={cartImg3} />
-                        </div>
-                        <div className="product__cart__item__text">
-                          <h6>Basic Flowing Scarf</h6>
-                          <h5>$98.49</h5>
-                        </div>
-                      </td>
-                      <td className="quantity__item">
-                        <div className="quantity">
-                          <div className="pro-qty">
-                            <span className="dec qtybtn">-</span>
-                            <input type="text" value="1" />
-                            <span className="inc qtybtn">+</span>
-                          </div>
-                        </div>
-                      </td>
-                      <td className="cart__price">$ 47.00</td>
-                      <td className="cart__close">
-                        <span className="icon_close"></span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="product__cart__item">
-                        <div className="product__cart__item__pic">
-                          <Image alt="" src={cartImg4} />
-                        </div>
-                        <div className="product__cart__item__text">
-                          <h6>Basic Flowing Scarf</h6>
-                          <h5>$98.49</h5>
-                        </div>
-                      </td>
-                      <td className="quantity__item">
-                        <div className="quantity">
-                          <div className="pro-qty">
-                            <span className="dec qtybtn">-</span>
-                            <input type="text" value="1" />
-                            <span className="inc qtybtn">+</span>
-                          </div>
-                        </div>
-                      </td>
-                      <td className="cart__price">$ 30.00</td>
-                      <td className="cart__close">
-                        <span className="icon_close"></span>
-                      </td>
-                    </tr>
+                        </td>
+                        <td className="cart__price">
+                          $ {item.price * item.quantity}
+                        </td>
+                        <td className="cart__close">
+                          <span className="icon_close"></span>
+                        </td>
+                      </tr>
+                      // <tr>
+                      //   <td className="product__cart__item">
+                      //     <Image alt="" src={item.image} />
+                      //     <div className="product__cart__item__text">
+                      //       <h6>{item.title}</h6>
+                      //       <h5>${item.price}</h5>
+                      //     </div>
+                      //   </td>
+
+                      // </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>

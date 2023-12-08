@@ -15,7 +15,7 @@ import { useContext } from "react";
 import { FaBars } from "react-icons/fa";
 const Header = ({ updateCartIcon }) => {
   const Cart = useContext(AppContext);
-  const { cartCount, cartItems, cartSubTotal } = useContext(Context);
+  const { cartItems, cartSubTotal } = useContext(Context);
   const router = useRouter();
   console.log(router.asPath);
   const currentroute = router.asPath;
@@ -57,15 +57,18 @@ const Header = ({ updateCartIcon }) => {
             </a>
           </div>
           <div className="offcanvas__cart__item">
-            <a href="#">
-              <Image
-                src={cartIcon}
-                width={24}
-                height={25}
-                alt="Picture of the author"
-              />{" "}
-              <span>{cartCount}</span>
-            </a>
+            <Link href="/shoppingCart">
+              <a>
+                <Image
+                  src={cartIcon}
+                  width={24}
+                  height={25}
+                  alt="Picture of the author"
+                />
+
+                <span>{cartItems.length}</span>
+              </a>
+            </Link>
             <div className="cart__price">
               Cart: <span>${cartSubTotal}</span>
             </div>
@@ -197,15 +200,17 @@ const Header = ({ updateCartIcon }) => {
                     </a>
                   </div>
                   <div className="header__top__right__cart">
-                    <a href="#">
-                      <Image
-                        src={cartIcon}
-                        width={23}
-                        height={27}
-                        alt="Picture of the author"
-                      />
-                      <span>{cartCount}</span>
-                    </a>
+                    <Link href="/shoppingCart">
+                      <a>
+                        <Image
+                          src={cartIcon}
+                          width={23}
+                          height={27}
+                          alt="Picture of the author"
+                        />
+                        <span>{cartItems.length}</span>
+                      </a>
+                    </Link>
                     <div className="cart__price">
                       Cart: <span>${cartSubTotal}</span>
                     </div>

@@ -102,7 +102,12 @@ const Shop = ({ updateCartIcon }) => {
                             paddingBottom: "4px",
                           }}
                           onClick={() => {
-                            handleAddToCart(item, quantity);
+                            handleAddToCart(
+                              item.id,
+                              item.title,
+                              item.price,
+                              item.image
+                            );
                             console.log(item);
                             item.isCartAdded = true;
                           }}

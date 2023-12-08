@@ -4,50 +4,33 @@ export const Context = createContext();
 
 const AppContext = ({ children }) => {
   let cart = [];
+  if (typeof window !== "undefined" && window.localStorage) {
+    const itemInString = localStorage.getItem("cartItems");
+    const CartIteminArray = JSON.parse(itemInString);
+    cart = CartIteminArray;
+  }
 
   const [cartItems, setCartItems] = useState(cart || []);
   const [cartCount, setCartCount] = useState(0);
   const [cartSubTotal, setCartSubTotal] = useState(0);
 
   useEffect(() => {
-    console.log(cartSubTotal);
-    let count = 0;
-    cartItems.map((item) => (count += item?.attributes?.quantity));
-    setCartCount(count);
     let SubTotal = 0;
-    cartItems.map(
-      (item) => (SubTotal += item?.attributes?.quantity * item.price)
-    );
+    cartItems.map((item) => (SubTotal += item?.quantity * item.price));
     setCartSubTotal(SubTotal);
   }, [cartItems]);
 
-  const handleAddToCart = (product, quantity) => {
-    console.log(product, quantity);
-    let items = [...cartItems];
-    let index = items?.findIndex((p) => p.id === product?.id);
-
-    if (index !== -1) {
-      // Check if attributes is defined before trying to access quantity
-      if (items[index].attributes) {
-        items[index].attributes.quantity += quantity;
-      } else {
-        // If attributes is undefined, initialize it with quantity
-        items[index].attributes = { quantity };
-      }
-    } else {
-      // Check if attributes is defined before trying to access quantity
-      if (product.attributes) {
-        product.attributes.quantity = quantity;
-      } else {
-        // If attributes is undefined, initialize it with quantity
-        product.attributes = { quantity };
-      }
-      items = [...items, product];
-    }
-
+  const handleAddToCart = (id, title, price, image) => {
+    const index = cartItems.findIndex((each) => each.id === id);
+    console.log(index);
+    let items = [
+      ...cartItems,
+      { id: id, title: title, quantity: 1, price: price, image: image },
+    ];
+    const itemInString = JSON.stringify(items);
+    localStorage.setItem("cartItems", itemInString);
     setCartItems(items);
   };
-
   const handleRemoveFromCart = (product) => {
     let items = [...cartItems];
     items = items?.filter((p) => p.id !== product.id);
