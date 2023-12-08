@@ -14,7 +14,7 @@ const Products = () => {
       <div className="container">
         <div className="row">
           {displayedItems.map((item) => (
-            <div className="col-lg-3 col-md-6 col-sm-6">
+            <div className="col-lg-3 col-md-6 col-sm-6" key={item.id}>
               <div className="product__item">
                 <div
                   className="product__item__pic set-bg"

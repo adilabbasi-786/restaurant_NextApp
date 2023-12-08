@@ -48,7 +48,7 @@ const ShoppingCart = () => {
                   </thead>
                   <tbody>
                     {cartItems.map((item) => (
-                      <tr>
+                      <tr key={item.id}>
                         <td>
                           <div
                             style={{
