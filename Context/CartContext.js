@@ -40,11 +40,15 @@ const AppContext = ({ children }) => {
     localStorage.setItem("cartItems", JSON.stringify(items));
     setCartItems(items);
   };
+  const updateLocalStorage = (cart) => {
+    localStorage.setItem("cartItems", JSON.stringify(cart));
+  };
   const increment = (id) => {
     const updatedCart = cartItems.map((item) =>
       item.id === id ? { ...item, quantity: item.quantity + 1 } : item
     );
     setCartItems(updatedCart);
+    updateLocalStorage(updatedCart);
   };
   const decrement = (id) => {
     const updatedCart = cartItems.map((item) =>
@@ -53,6 +57,7 @@ const AppContext = ({ children }) => {
         : item
     );
     setCartItems(updatedCart);
+    updateLocalStorage(updatedCart);
   };
 
   return (
