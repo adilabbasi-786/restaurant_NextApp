@@ -9,7 +9,13 @@ import Link from "next/link";
 const ShoppingCart = () => {
   const Cart = useContext(AppContext);
 
-  const { cartItems, cartSubTotal, handleRemoveFromCart } = useContext(Context);
+  const {
+    cartItems,
+    cartSubTotal,
+    handleRemoveFromCart,
+    increment,
+    decrement,
+  } = useContext(Context);
   const shippingPrice = 50.0;
   const total = cartSubTotal + shippingPrice;
   return (
@@ -87,9 +93,19 @@ const ShoppingCart = () => {
                         <td className="quantity__item">
                           <div className="quantity">
                             <div className="pro-qty">
-                              <span className="dec qtybtn">-</span>
-                              <input type="text" value="1" />
-                              <span className="inc qtybtn">+</span>
+                              <span
+                                className="dec qtybtn"
+                                onClick={() => decrement(item.id)}
+                              >
+                                -
+                              </span>
+                              <input type="text" value={item.quantity} />
+                              <span
+                                className="inc qtybtn"
+                                onClick={() => increment(item.id)}
+                              >
+                                +
+                              </span>
                             </div>
                           </div>
                         </td>

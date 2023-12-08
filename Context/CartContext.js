@@ -33,28 +33,28 @@ const AppContext = ({ children }) => {
     localStorage.setItem("cartItems", itemInString);
     setCartItems(items);
   };
-  // const increment=(id)=>{
-  //   const index=
 
-  // }
   const handleRemoveFromCart = (id) => {
-    // const index = cartItems.findIndex((each) => each.id === id);
     let items = [...cartItems];
     items = items?.filter((p) => p.id !== id);
     localStorage.setItem("cartItems", JSON.stringify(items));
     setCartItems(items);
   };
-  const handleCartProductQuantity = (type, id) => {
-    let items = [...cartItems];
-    let index = items?.findIndex((p) => p.id === id);
-    if (type === "inc") {
-      items[index].attributes.quantity += 1;
-    } else if (type === "dec") {
-      if (items[index].attributes.quantity === 1) return;
-      items[index].attributes.quantity -= 1;
-    }
-    setCartItems(items);
+  const increment = (id) => {
+    const updatedCart = cartItems.map((item) =>
+      item.id === id ? { ...item, quantity: item.quantity + 1 } : item
+    );
+    setCartItems(updatedCart);
   };
+  const decrement = (id) => {
+    const updatedCart = cartItems.map((item) =>
+      item.id === id
+        ? { ...item, quantity: Math.max(item.quantity - 1, 1) }
+        : item
+    );
+    setCartItems(updatedCart);
+  };
+
   return (
     <Context.Provider
       value={{
@@ -64,8 +64,9 @@ const AppContext = ({ children }) => {
         cartSubTotal,
         handleAddToCart,
         handleRemoveFromCart,
-        handleCartProductQuantity,
         total,
+        increment,
+        decrement,
       }}
     >
       {children}
