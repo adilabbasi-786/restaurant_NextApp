@@ -37,7 +37,7 @@ const Contact = () => {
               <div className="row d-flex justify-content-center">
                 <div className="col-lg-4 col-md-7">
                   {mainData.map((item) => (
-                    <div className="map__inner">
+                    <div className="map__inner" key={item.id}>
                       <h6>{item?.attributes?.city}</h6>
                       <ul>
                         <li>{item?.attributes?.address}</li>
@@ -64,7 +64,7 @@ const Contact = () => {
             <div className="row">
               <div className="col-lg-4 col-md-6 col-sm-6">
                 {data.map((item) => (
-                  <div className="contact__address__item">
+                  <div className="contact__address__item" key={item.id}>
                     <h6>{item?.attributes?.city}</h6>
                     <ul>
                       <li>
