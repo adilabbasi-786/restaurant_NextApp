@@ -1,6 +1,32 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { useEffect, useState } from "react";
+const axios = require("axios");
+
 const Contact = () => {
+  const [data, setData] = useState([]);
+  const [mainData, setMainData] = useState([]);
+
+  const getData = async () => {
+    let req = await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/api/contact1s?populate=*`
+    );
+    let res = await req.json();
+    setData(res.data);
+  };
+  useEffect(() => {
+    getData();
+  }, []);
+  const getMainData = async () => {
+    let req = await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/api/main-branches`
+    );
+    let res = await req.json();
+    setMainData(res.data);
+  };
+  useEffect(() => {
+    getMainData();
+  }, []);
   return (
     <>
       <Header />
@@ -10,14 +36,16 @@ const Contact = () => {
             <div className="container">
               <div className="row d-flex justify-content-center">
                 <div className="col-lg-4 col-md-7">
-                  <div className="map__inner">
-                    <h6>COlorado</h6>
-                    <ul>
-                      <li>1000 Lakepoint Dr, Frisco, CO 80443, USA</li>
-                      <li>Sweetcake@support.com</li>
-                      <li>+1 800-786-1000</li>
-                    </ul>
-                  </div>
+                  {mainData.map((item) => (
+                    <div className="map__inner">
+                      <h6>{item?.attributes?.city}</h6>
+                      <ul>
+                        <li>{item?.attributes?.address}</li>
+                        <li>{item?.attributes?.email}</li>
+                        <li>{item?.attributes?.phoneNumber}</li>
+                      </ul>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -35,23 +63,25 @@ const Contact = () => {
           <div className="contact__address">
             <div className="row">
               <div className="col-lg-4 col-md-6 col-sm-6">
-                <div className="contact__address__item">
-                  <h6>san bernardino</h6>
-                  <ul>
-                    <li>
-                      <span className="icon_pin_alt"></span>
-                      <p>795 W 5th St, San Bernardino, CA 92410, USA</p>
-                    </li>
-                    <li>
-                      <span className="icon_headphones"></span>
-                      <p>+1 800-786-1000</p>
-                    </li>
-                    <li>
-                      <span className="icon_mail_alt"></span>
-                      <p>Sweetcake@support.com</p>
-                    </li>
-                  </ul>
-                </div>
+                {data.map((item) => (
+                  <div className="contact__address__item">
+                    <h6>{item?.attributes?.city}</h6>
+                    <ul>
+                      <li>
+                        <span className="icon_pin_alt"></span>
+                        <p>c</p>
+                      </li>
+                      <li>
+                        <span className="icon_headphones"></span>
+                        <p>{item?.attributes?.phoneNumber}</p>
+                      </li>
+                      <li>
+                        <span className="icon_mail_alt"></span>
+                        <p>{item?.attributes?.email}</p>
+                      </li>
+                    </ul>
+                  </div>
+                ))}
               </div>
               <div className="col-lg-4 col-md-6 col-sm-6">
                 <div className="contact__address__item">

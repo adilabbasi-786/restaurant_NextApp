@@ -3,9 +3,11 @@ import Header from "../components/Header";
 import AppContext, { Context } from "../Context/CartContext";
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
+import { useRouter } from "next/router";
 const axios = require("axios");
 
 const Checkout = () => {
+  const router = useRouter();
   const { register, handleSubmit, reset } = useForm({
     defaultValues: {
       data: {
@@ -21,7 +23,7 @@ const Checkout = () => {
     },
   });
   const Cart = useContext(AppContext);
-  const { cartItems, cartSubTotal, total } = useContext(Context);
+  const { cartItems, cartSubTotal, total, setCartItems } = useContext(Context);
   const onSubmit = async (formdata) => {
     // Exclude the "image" property from each item in the "items" array
     formdata.data.items = cartItems.map(({ image, ...rest }) => rest);
@@ -31,6 +33,8 @@ const Checkout = () => {
     );
     reset();
     alert("order place successfull");
+    setCartItems([]);
+    router.push("/");
   };
 
   return (
