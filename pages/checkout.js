@@ -2,9 +2,36 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import AppContext, { Context } from "../Context/CartContext";
 import { useContext } from "react";
+import { useForm } from "react-hook-form";
+const axios = require("axios");
+
 const Checkout = () => {
+  const { register, handleSubmit, reset } = useForm({
+    defaultValues: {
+      data: {
+        firstName: "",
+        lastName: "",
+        address: "",
+        email: "",
+        phoneNumber: "",
+        postCode: "",
+        notes: "",
+        items: [],
+      },
+    },
+  });
   const Cart = useContext(AppContext);
   const { cartItems, cartSubTotal, total } = useContext(Context);
+  const onSubmit = async (formdata) => {
+    // Exclude the "image" property from each item in the "items" array
+    formdata.data.items = cartItems.map(({ image, ...rest }) => rest);
+    await axios.post(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/api/orders`,
+      formdata
+    );
+    reset();
+    alert("order place successfull");
+  };
 
   return (
     <>
@@ -29,7 +56,7 @@ const Checkout = () => {
       <section className="checkout spad">
         <div className="container">
           <div className="checkout__form">
-            <form action="#">
+            <form onSubmit={handleSubmit(onSubmit)}>
               <div className="row">
                 <div className="col-lg-8 col-md-6">
                   <h6 className="coupon__code">
@@ -43,7 +70,7 @@ const Checkout = () => {
                         <p>
                           Fist Name<span>*</span>
                         </p>
-                        <input type="text" />
+                        <input type="text" {...register("data.firstName")} />
                       </div>
                     </div>
                     <div className="col-lg-6">
@@ -51,16 +78,16 @@ const Checkout = () => {
                         <p>
                           Last Name<span>*</span>
                         </p>
-                        <input type="text" />
+                        <input type="text" {...register("data.lastName")} />
                       </div>
                     </div>
                   </div>
-                  <div className="checkout__input">
+                  {/* <div className="checkout__input">
                     <p>
                       Country<span>*</span>
                     </p>
                     <input type="text" />
-                  </div>
+                  </div> */}
                   <div className="checkout__input">
                     <p>
                       Address<span>*</span>
@@ -69,29 +96,30 @@ const Checkout = () => {
                       type="text"
                       placeholder="Street Address"
                       className="checkout__input__add"
+                      {...register("data.address")}
                     />
-                    <input
+                    {/* <input
                       type="text"
                       placeholder="Apartment, suite, unite ect (optinal)"
-                    />
+                    /> */}
                   </div>
-                  <div className="checkout__input">
+                  {/* <div className="checkout__input">
                     <p>
                       Town/City<span>*</span>
                     </p>
                     <input type="text" />
-                  </div>
-                  <div className="checkout__input">
+                  </div> */}
+                  {/* <div className="checkout__input">
                     <p>
                       Country/State<span>*</span>
                     </p>
                     <input type="text" />
-                  </div>
+                  </div> */}
                   <div className="checkout__input">
                     <p>
                       Postcode / ZIP<span>*</span>
                     </p>
-                    <input type="text" />
+                    <input type="text" {...register("data.postCode")} />
                   </div>
                   <div className="row">
                     <div className="col-lg-6">
@@ -99,7 +127,7 @@ const Checkout = () => {
                         <p>
                           Phone<span>*</span>
                         </p>
-                        <input type="text" />
+                        <input type="text" {...register("data.phoneNumber")} />
                       </div>
                     </div>
                     <div className="col-lg-6">
@@ -107,11 +135,11 @@ const Checkout = () => {
                         <p>
                           Email<span>*</span>
                         </p>
-                        <input type="text" />
+                        <input type="text" {...register("data.email")} />
                       </div>
                     </div>
                   </div>
-                  <div className="checkout__input__checkbox">
+                  {/* <div className="checkout__input__checkbox">
                     <label htmlFor="acc">
                       Create an account?
                       <input type="checkbox" id="acc" />
@@ -122,20 +150,20 @@ const Checkout = () => {
                       you are a returning customer please login at the top of
                       the page
                     </p>
-                  </div>
-                  <div className="checkout__input">
+                  </div> */}
+                  {/* <div className="checkout__input">
                     <p>
                       Account Password<span>*</span>
                     </p>
                     <input type="text" />
-                  </div>
-                  <div className="checkout__input__checkbox">
+                  </div> */}
+                  {/* <div className="checkout__input__checkbox">
                     <label htmlFor="diff-acc">
                       Note about your order, e.g, special noe for delivery
                       <input type="checkbox" id="diff-acc" />
                       <span className="checkmark"></span>
                     </label>
-                  </div>
+                  </div> */}
                   <div className="checkout__input">
                     <p>
                       Order notes<span>*</span>
@@ -143,6 +171,7 @@ const Checkout = () => {
                     <input
                       type="text"
                       placeholder="Notes about your order, e.g. special notes for delivery."
+                      {...register("data.notes")}
                     />
                   </div>
                 </div>
